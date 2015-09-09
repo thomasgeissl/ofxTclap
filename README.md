@@ -10,7 +10,9 @@ arguments in a type independent manner.
 
 Installation
 ---
+```sh
 git clone https://github.com/thomasgeissl/ofxTclap.git /path/to/your/openframeworks/addons/ofxTclap
+```
 
 Example
 ---
@@ -21,4 +23,4 @@ Other examples can be found at <https://github.com/eile/tclap/tree/master/exampl
 
 Known issues
 ---
-* Somehow, I was not able to exclude the tclap/examples. That is why i removed them.
+* Somehow, I was not able to exclude the tclap/examples. That is why i removed them. Could be a bug in the of makefiles.
