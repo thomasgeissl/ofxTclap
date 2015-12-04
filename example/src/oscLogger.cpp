@@ -28,12 +28,18 @@ void oscLogger::update(){
     while(_oscReceiver.hasWaitingMessages())
     {
         ofxOscMessage message;
-        _oscReceiver.getNextMessage(&message);
-        string messageS;
+        _oscReceiver.getNextMessage(message);
+        string messageS = message.getAddress();
         for(int i = 0; i < message.getNumArgs(); i++)
         {
+            //TODO append type and value
         }
-        ofLogNotice("oscLogger")<<message.getAddress()<<messageS;
+        _messageHistory.push_back(messageS);
+        while(_messageHistory.size() > 20)
+        {
+            _messageHistory.pop_front();
+        }
+
     }
 }
 ofParameterGroup & oscLogger::getParameters()
@@ -62,4 +68,14 @@ void oscLogger::onLogToFileChange(bool &value)
     {
         ofLogToConsole();
     }
+}
+string oscLogger::getSerializedMessageHistory()
+{
+    string serializedMessageHistory;
+    for(auto message : _messageHistory)
+    {
+        serializedMessageHistory += message;
+        serializedMessageHistory += "\n";
+    }
+    return serializedMessageHistory;
 }

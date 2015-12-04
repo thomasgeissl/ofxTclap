@@ -13,6 +13,8 @@ protected:
     void onPortChange(int &value);
     void onFileChange(string &value);
     void onLogToFileChange(bool &value);
+    string getSerializedMessageHistory();
+
 
 protected:
     ofxOscReceiver _oscReceiver;
@@ -20,4 +22,5 @@ protected:
     ofParameter<int> _portParameter;
     ofParameter<bool> _logToFileParameter;
     ofParameter<string> _fileParameter;
+    std::list<string> _messageHistory;
 };

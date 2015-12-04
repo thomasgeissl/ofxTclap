@@ -23,6 +23,8 @@ void ofGuiApp::draw(){
     {
         _gui.draw();
     }
+    ofSetColor(ofColor::black);
+    ofDrawBitmapString(getSerializedMessageHistory(), _gui.getShape().x +_gui.getShape().width + 50, 50);
 
 }
 
