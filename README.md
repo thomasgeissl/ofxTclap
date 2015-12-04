@@ -17,7 +17,7 @@ git clone https://github.com/thomasgeissl/ofxTclap.git /path/to/your/openframewo
 Example
 ---
 There is a little osc logger included as an example. 
-It is still a work in progress, but the usage of TCLAP is shown in main.cpp file.
+The usage of TCLAP is shown in main.cpp file.
 
 Other examples can be found at <https://github.com/eile/tclap/tree/master/examples>.
 
