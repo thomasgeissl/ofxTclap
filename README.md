@@ -1,26 +1,31 @@
-ofxTclap
-===
+# ofxTclap
 
-Description
----
+## Description
 ofxTclap is an addon for openframeworks <https://github.com/openframeworks/openframeworks>.
-It includes TCLAP <https://github.com/teile/tclap> in an openframeworks project. TCLAP (Templatized C++ Command Line Parser) facilitates parsing command line
-arguments in a type independent manner.
+It includes TCLAP <https://github.com/teile/tclap> in an openframeworks project. TCLAP (Templatized C++ Command Line Parser) facilitates parsing command line arguments in a type independent manner.
 
 
-Installation
----
+## Installation
 ```sh
 git clone https://github.com/thomasgeissl/ofxTclap.git /path/to/your/openframeworks/addons/ofxTclap
 ```
 
-Example
----
+## Example
 There is a little osc logger included as an example. 
 The usage of TCLAP is shown in main.cpp file.
 
 Other examples can be found at <https://github.com/eile/tclap/tree/master/examples>.
 
-Known issues
----
+## Known issues
 * Somehow, I was not able to exclude the tclap/examples. That is why i removed them. Could be a bug in the of makefiles.
+
+## License
+This project is released under MIT license, please note that dependencies might be released differently.
+
+Copyright (c) 2018 Thomas Geissl
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
