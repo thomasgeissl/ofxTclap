@@ -1,28 +1,17 @@
 # ofxTclap
 
 ## Description
-ofxTclap is an addon for openframeworks <https://github.com/openframeworks/openframeworks>.
-It includes TCLAP <https://github.com/teile/tclap> in an openframeworks project. TCLAP (Templatized C++ Command Line Parser) facilitates parsing command line arguments in a type independent manner.
+ofxTclap is an addon for [openframeworks](https://github.com/openframeworks/openFrameworks).
+It includes [TCLAP](http://tclap.sourceforge.net/) in an openFrameworks project. TCLAP (Templatized C++ Command Line Parser) facilitates parsing command line arguments in a type independent manner.
 
+## Build status
 
-## Installation
-```sh
-git clone https://github.com/thomasgeissl/ofxTclap.git /path/to/your/openframeworks/addons/ofxTclap
-```
-
-## Example
-There is a little osc logger included as an example. 
-The usage of TCLAP is shown in main.cpp file.
-
-Other examples can be found at <https://github.com/eile/tclap/tree/master/examples>.
-
-## Known issues
-* Somehow, I was not able to exclude the tclap/examples. That is why i removed them. Could be a bug in the of makefiles.
+[![Build Status](https://travis-ci.com/thomasgeissl/ofxTclap.svg?branch=master)](https://travis-ci.com/thomasgeissl/ofxTclap)
 
 ## License
 This project is released under MIT license, please note that dependencies might be released differently.
 
-Copyright (c) 2018 Thomas Geissl
+Copyright (c) 2020 Thomas Geissl
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

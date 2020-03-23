@@ -1,43 +1,31 @@
-#include "ofMain.h"
-#include "ofConsoleApp.h"
-#include "ofGuiApp.h"
+#include "ofLog.h"
 #include "ofxTclap.h"
 
-int main(int argc, char** argv)
+int main(int argc, char **argv)
 {
-    try {  
+    try
+    {
         // Define the command line object.
         CmdLine cmd("OSC Logger");
 
         // Define a value argument and add it to the command line.
-        ValueArg<string> destinationArg("d","destination","path",false,"osc.log","string");
-        ValueArg<int> portArg("p","port","local port",false,8000,"int");
-        cmd.add( destinationArg );
-        cmd.add( portArg );
+        // h/help is already taken
+        ValueArg<std::string> hostArg("i", "host", "host", false, "localhost", "string");
+        ValueArg<int> portArg("p", "port", "port", false, 8000, "int");
+        cmd.add(hostArg);
+        cmd.add(portArg);
 
         // Define a switch and add it to the command line.
-        SwitchArg guiSwitch("g","gui","shows gui", false);
-        SwitchArg consoleSwitch("c","console"," log to console", false);
-        cmd.add(guiSwitch);
-        cmd.add(consoleSwitch);
-
+        SwitchArg debugSwitch("d", "debug", "debug mode", false);
+        cmd.add(debugSwitch);
         cmd.parse(argc, argv);
 
-        if(guiSwitch.getValue())
-        {
-            ofSetupOpenGL(1024,768,OF_WINDOW);
-            ofRunApp(new ofGuiApp(portArg.getValue(), destinationArg.getValue(), !consoleSwitch.getValue()));
-        }
-        else
-        {
-            ofAppNoWindow window;
-            ofSetupOpenGL(&window,0,0,OF_WINDOW);
-            ofRunApp(new ofConsoleApp(portArg.getValue(), destinationArg.getValue(), !consoleSwitch.getValue()));
-        }
-
-    } 
-    catch (ArgException &e)  // catch any exceptions
-    { 
-        ofLogError("main")<<e.error()<<" for arg "<<e.argId();
+        ofLogNotice() << "debug: " << debugSwitch.getValue();
+        ofLogNotice() << "host: " << hostArg.getValue();
+        ofLogNotice() << "port: " << portArg.getValue();
+    }
+    catch (ArgException &e) // catch any exceptions
+    {
+        ofLogError("main") << e.error() << " for arg " << e.argId();
     }
 }
